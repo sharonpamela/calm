@@ -35,10 +35,9 @@ Click **Credentials >** :fa:`plus-circle` and fill out the following fields then
 Click **Back**.
 
 .. note::
-
-  Credentials are unique to each Blueprint.
-
-  Each Blueprint requires a minimum of 1 Credential.
+   Credentials are unique to each Blueprint.
+   Each Blueprint requires a minimum of 1 Credential.
+.. note::
 
 Click **Save** to save your Blueprint.
 
@@ -93,8 +92,8 @@ Adding DB Service
 .................
 
 .. note::
-
-  Application Overview - The pane within the Blueprint Editor used to create and manage Blueprint Layers. Blueprint Layers consist of Services, Application Profiles, and Actions.
+   Application Overview - The pane within the Blueprint Editor used to create and manage Blueprint Layers. Blueprint Layers consist of Services, Application Profiles, and Actions.
+.. note::
 
 In **Application Overview > Services**, click :fa:`plus-circle`.
 
@@ -105,7 +104,9 @@ Fill out the following fields:
 - **Service Name** - MySQL
 - **Name** - MySQLAHV
 
-  .. note:: This defines the name of the substrate within Calm. Names can only contain alphanumeric characters, spaces, and underscores.
+.. note::
+   This defines the name of the substrate within Calm. Names can only contain alphanumeric characters, spaces, and underscores.
+.. note::
 
 - **Cloud** - Nutanix
 - **OS** - Linux
@@ -119,16 +120,16 @@ Fill out the following fields:
 - **Memory (GiB)** - 4
 - Select **Guest Customization**
 - Leave **Cloud-init** selected and paste in the following script
-  .. code-block:: bash
+.. code-block:: bash
 
-    #cloud-config
-    users:
-      - name: centos
-        ssh-authorized-keys:
-          - @@{INSTANCE_PUBLIC_KEY}@@
-        sudo: ['ALL=(ALL) NOPASSWD:ALL']
+  #cloud-config
+  users:
+    - name: centos
+      ssh-authorized-keys:
+        - @@{INSTANCE_PUBLIC_KEY}@@
+      sudo: ['ALL=(ALL) NOPASSWD:ALL']
 
-  .. code-block:: bash
+.. code-block:: bash
 - Select :fa:`plus-circle` under **Network Adapters (NICs)**
 - **NIC** - Primary
 - **Credential** - CENTOS
@@ -181,10 +182,9 @@ Copy and paste the following script into the **Script** field:
   EOF
 
 .. note::
-
-  You can click the **Pop Out** icon on the script field for a larger window to view/edit scripts.
-
-  Looking at the script you can see the package will install MySQL, configure the credentials and create a database based on the variables specified earlier in the exercise.
+   You can click the **Pop Out** icon on the script field for a larger window to view/edit scripts.
+   Looking at the script you can see the package will install MySQL, configure the credentials and create a database based on the variables specified earlier in the exercise.
+.. note::
 
 Select the MySQL service icon in the workspace window again and scroll to the top of the **Configuration Panel**, click **Package**.
 
@@ -202,7 +202,9 @@ Copy and paste the following script into the **Script** field:
   #!/bin/bash
   echo "Goodbye!"
 
-.. note:: The uninstall script can be used for removing packages, updating network services like DHCP and DNS, removing entries from Active Directory, etc. It is not being used for this simple example.
+.. note::
+   The uninstall script can be used for removing packages, updating network services like DHCP and DNS, removing entries from Active Directory, etc. It is not being used for this simple example.
+.. note::
 
 Click **Save**. You will be prompted with specific errors if there are validation issues such as missing fields or unacceptable characters.
 
@@ -214,8 +216,8 @@ From the toolbar at the top of the Blueprint Editor, click **Launch**.
 In the **Name of the Application** field, specify a unique name (e.g. CalmMySQL*<INITIALS>*-1).
 
 .. note::
-
-  A single Blueprint can be launched multiple times within the same environment but each instance requires a unique **Application Name** in Calm.
+   A single Blueprint can be launched multiple times within the same environment but each instance requires a unique **Application Name** in Calm.
+.. note::
 
 Click **Create**.
 
