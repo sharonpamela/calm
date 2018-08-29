@@ -105,11 +105,11 @@ If Putty Keygen is not already present on your machine, first download and insta
 - Open up Putty Key Generator
 - Create a key by clicking **Generate** and then moving your mouse in the blank section
 - Convert the private key to OpenSSH format by selecting **Conversion > Export OpenSSH key**
-.. figure:: images/putty1.png
+  .. figure:: images/putty1.png
 - On the pop-up, selct **Yes** as a passphrase is not required, and not supported for Prism Central versions less than 5.8.1
-.. figure:: images/putty2.png
+  .. figure:: images/putty2.png
 - Save the key with a name of your choice (I'm using **calmPem.pem** in my example)
-.. figure:: images/putty3.png
+  .. figure:: images/putty3.png
 
 Accessing the Private Key
 .........................
