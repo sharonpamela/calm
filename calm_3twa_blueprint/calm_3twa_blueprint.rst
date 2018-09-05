@@ -73,6 +73,8 @@ Copy and paste the following script into the **Script** field:
 
   sudo yum update -y
   sudo yum -y install epel-release
+  sudo setenforce 0
+  sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config
   sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
   sudo yum update -y
   sudo yum install -y nginx php56w-fpm php56w-cli php56w-mcrypt php56w-mysql php56w-mbstring php56w-dom git unzip
@@ -118,9 +120,7 @@ Copy and paste the following script into the **Script** field:
   sudo git clone https://github.com/ideadevice/quickstart-basic.git /var/www/laravel
   sudo sed -i 's/DB_HOST=.*/DB_HOST=@@{MySQL.address}@@/' /var/www/laravel/.env
   
-  if [ "@@{calm_array_index}@@" == "0" ]; then
-    sudo su - -c "cd /var/www/laravel; composer install; php artisan migrate"
-  fi
+  sudo su - -c "cd /var/www/laravel; composer install; php artisan migrate"
   
   sudo chown -R nginx:nginx /var/www/laravel
   sudo chmod -R 777 /var/www/laravel/
@@ -247,6 +247,8 @@ Copy and paste the following script into the **Script** field:
 
   sudo yum update -y
   sudo yum install -y haproxy
+  sudo setenforce 0
+  sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config 
 
   echo "global
    log 127.0.0.1 local0

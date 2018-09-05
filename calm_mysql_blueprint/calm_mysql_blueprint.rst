@@ -158,6 +158,8 @@ Copy and paste the following script into the **Script** field:
 
   sudo yum install -y "http://repo.mysql.com/mysql-community-release-el7.rpm"
   sudo yum update -y
+  sudo setenforce 0
+  sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config
   sudo yum install -y mysql-community-server.x86_64
 
   sudo /bin/systemctl start mysqld
