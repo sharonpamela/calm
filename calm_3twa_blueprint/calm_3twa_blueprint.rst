@@ -146,7 +146,7 @@ Copy and paste the following script into the **Script** field:
   #!/bin/bash
   set -ex
   
-  sudo rf /var/www/laravel
+  sudo rm -rf /var/www/laravel
   sudo yum erase -y nginx
 
 .. code-block:: bash
@@ -360,6 +360,7 @@ Copy and paste the following script into the **Script** field:
   set -ex
   
   host=$(echo "@@{WebServer.address}@@" | awk -F "," '{print $NF}')
+  port=80
   echo " server host-${host} ${host}:${port} weight 1 maxconn 100 check" | sudo tee -a /etc/haproxy/haproxy.cfg
   
   sudo systemctl daemon-reload
