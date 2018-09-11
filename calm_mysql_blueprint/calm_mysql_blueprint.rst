@@ -30,21 +30,21 @@ Click **Proceed** to continue.
 
 Click **Credentials >** :fa:`plus-circle` and depending on which track you're on, do *one* of the two following steps:
 
- **Cloud Track**:
+**Cloud Track**:
 
- - **Credential Name** - CENTOS
- - **Username** - centos
- - **Secret** - Key
- - **Key** - Paste in your private key from the previous lesson
+- **Credential Name** - CENTOS
+- **Username** - centos
+- **Secret** - Key
+- **Key** - Paste in your private key from the previous lesson
 
 .. figure:: images/keycredential.png
 
- **Local Track**:
+**Local Track**:
 
- - **Credential Name** - CENTOS
- - **Username** - root
- - **Secret** - Password
- - **Password** - nutanix/4u
+- **Credential Name** - CENTOS
+- **Username** - root
+- **Secret** - Password
+- **Password** - nutanix/4u
 
 .. figure:: images/passcredential.png
 
@@ -90,14 +90,14 @@ All VMs in AHV are based off of a disk image.  You have the option of selecting 
 
  If you're on the **Cloud Track**, then follow these steps.  If you're on the **Local Track**, skip to the next section (**Adding DB Service**).  Near the top, click **Configuration > Downloadable Image Configuration** :fa:`plus-circle` and fill out the following fields:
 
- - **Package Name** - CentOS\_7\_Cloud
- - **Description** - CentOS 7 Cloud Image
- - **Image Name** - CentOS\_7\_Cloud
- - **Image Type** - Disk Image
- - **Architecture** - X86\_64
- - **Source URI** - http://download.nutanix.com/calm/CentOS-7-x86\_64-GenericCloud.qcow2
- - **Product Name** - CentOS
- - **Product Version** - 7
+- **Package Name** - CentOS\_7\_Cloud
+- **Description** - CentOS 7 Cloud Image
+- **Image Name** - CentOS\_7\_Cloud
+- **Image Type** - Disk Image
+- **Architecture** - X86\_64
+- **Source URI** - http://download.nutanix.com/calm/CentOS-7-x86\_64-GenericCloud.qcow2
+- **Product Name** - CentOS
+- **Product Version** - 7
 
 .. note::
    This Cloud based image is the same that's used for the majority of the Nutanix Pre-Seeded Application Blueprints.
@@ -140,8 +140,8 @@ Fill out the following fields:
 - **Cores per vCPU** - 1
 - **Memory (GiB)** - 4
 - **Guest Customization** - Depending on your track:
-   - **Cloud Track** - Select Guest Customization
-     - Leave **Cloud-init** selected and paste in the following script
+  - **Cloud Track** - Select Guest Customization
+    - Leave **Cloud-init** selected and paste in the following script
 .. code-block:: bash
 
   #cloud-config
@@ -153,7 +153,7 @@ Fill out the following fields:
 
 .. code-block:: bash
 
-     - **Local Track** - Leave Guest Customization Unselected
+    - **Local Track** - Leave Guest Customization Unselected
 - Select :fa:`plus-circle` under **Network Adapters (NICs)**
 - **NIC** - Primary
 - **Credential** - CENTOS
