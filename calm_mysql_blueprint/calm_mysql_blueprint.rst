@@ -143,7 +143,6 @@ Fill out the following fields:
   - **Cloud Track** - Select Guest Customization
 
     - Leave **Cloud-init** selected and paste in the following script
-
       .. code-block:: bash
       
         #cloud-config
