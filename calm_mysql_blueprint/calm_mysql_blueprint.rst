@@ -88,7 +88,7 @@ Adding a Downloadable Image
 
 All VMs in AHV are based off of a disk image.  You have the option of selecting an image that's already managed by Prism Central (**Local Track**), or specifying a Downloadable Image via a URI (**Cloud Track**).  If the latter is chosen, during the application deployment Prism Central will automatically download and create the image specified.  If an image with the same URI already exists on the cluster, it will skip the download and use that instead.
 
- If you're on the **Cloud Track**, then follow these steps.  If you're on the **Local Track**, skip to the next section (**Adding DB Service**).  Near the top, click **Configuration > Downloadable Image Configuration** :fa:`plus-circle` and fill out the following fields:
+If you're on the **Cloud Track**, then follow these steps.  If you're on the **Local Track**, skip to the next section (**Adding DB Service**).  Near the top, click **Configuration > Downloadable Image Configuration** :fa:`plus-circle` and fill out the following fields:
 
 - **Package Name** - CentOS\_7\_Cloud
 - **Description** - CentOS 7 Cloud Image
@@ -126,7 +126,6 @@ Fill out the following fields:
 .. note::
    This defines the name of the substrate within Calm. Names can only contain alphanumeric characters, spaces, and underscores.
 .. note::
-
 - **Cloud** - Nutanix
 - **OS** - Linux
 - **VM Name** - MYSQL-@@{calm_array_index}@@-@@{calm_time}@@
@@ -140,8 +139,11 @@ Fill out the following fields:
 - **Cores per vCPU** - 1
 - **Memory (GiB)** - 4
 - **Guest Customization** - Depending on your track:
+
   - **Cloud Track** - Select Guest Customization
+
     - Leave **Cloud-init** selected and paste in the following script
+
 .. code-block:: bash
 
   #cloud-config
@@ -154,6 +156,7 @@ Fill out the following fields:
 .. code-block:: bash
 
     - **Local Track** - Leave Guest Customization Unselected
+
 - Select :fa:`plus-circle` under **Network Adapters (NICs)**
 - **NIC** - Primary
 - **Credential** - CENTOS
