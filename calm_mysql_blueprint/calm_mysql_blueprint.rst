@@ -144,18 +144,18 @@ Fill out the following fields:
 
     - Leave **Cloud-init** selected and paste in the following script
 
-.. code-block:: bash
+      .. code-block:: bash
+      
+        #cloud-config
+        users:
+          - name: centos
+            ssh-authorized-keys:
+              - @@{INSTANCE_PUBLIC_KEY}@@
+            sudo: ['ALL=(ALL) NOPASSWD:ALL']
+      
+      .. code-block:: bash
 
-  #cloud-config
-  users:
-    - name: centos
-      ssh-authorized-keys:
-        - @@{INSTANCE_PUBLIC_KEY}@@
-      sudo: ['ALL=(ALL) NOPASSWD:ALL']
-
-.. code-block:: bash
-
-    - **Local Track** - Leave Guest Customization Unselected
+  - **Local Track** - Leave Guest Customization Unselected
 
 - Select :fa:`plus-circle` under **Network Adapters (NICs)**
 - **NIC** - Primary
