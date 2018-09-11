@@ -12,6 +12,13 @@ Calm Blueprint (3TWA)
 
 In this exercise you will extend the MySQL Blueprint created previously into a basic 3 Tier Web Application (a Task Manager), as shown below.  You'll also add the ability to perform Day 2 operations (scaling) to the blueprint.
 
+As with the previous MySQL Lab, this lab has two tracks:
+
+ - **Cloud Track** - We'll use a Cloud based CentOS image which does not allow password based authentication, instead it relies on *SSH keys*.  Most Public Clouds authenticate in this manner.  If you're comfortable with SSH keys, we recommend you follow this track.
+ - **Local Track** - We'll use a local CentOS image which allows password based authentication.  If you've never used SSH keys before, we recommend you follow this track.
+
+You **must** follow the same track as you did for the MySQL lab.
+
 .. figure:: images/3twa1.png
 
 Creating the Web Server
@@ -37,18 +44,25 @@ With the WebServer service icon selected in the workspace window, scroll to the 
 - **vCPUs** - 2
 - **Cores per vCPU** - 1
 - **Memory (GiB)** - 4
-- Select **Guest Customization**
-- Leave **Cloud-init** selected and paste in the following script
-.. code-block:: bash
+- **Guest Customization** - Depending on your track:
 
-  #cloud-config
-  users:
-    - name: centos
-      ssh-authorized-keys:
-        - @@{INSTANCE_PUBLIC_KEY}@@
-      sudo: ['ALL=(ALL) NOPASSWD:ALL']
+  - **Cloud Track** - Select Guest Customization
 
-.. code-block:: bash
+    - Leave **Cloud-init** selected and paste in the following script
+
+      .. code-block:: bash
+
+        #cloud-config
+        users:
+          - name: centos
+            ssh-authorized-keys:
+              - @@{INSTANCE_PUBLIC_KEY}@@
+            sudo: ['ALL=(ALL) NOPASSWD:ALL']
+
+      .. code-block:: bash
+
+  - **Local Track** - Leave Guest Customization Unselected
+
 - Select :fa:`plus-circle` under **Network Adapters (NICs)**
 - **NIC** - Primary
 - **Credential** - CENTOS
@@ -215,18 +229,25 @@ Select **Service3** and fill out the following fields in the **Configuration Pan
 - **vCPUs** - 2
 - **Cores per vCPU** - 1
 - **Memory (GiB)** - 4
-- Select **Guest Customization**
-- Leave **Cloud-init** selected and paste in the following script
-.. code-block:: bash
+- **Guest Customization** - Depending on your track:
 
-  #cloud-config
-  users:
-    - name: centos
-      ssh-authorized-keys:
-        - @@{INSTANCE_PUBLIC_KEY}@@
-      sudo: ['ALL=(ALL) NOPASSWD:ALL']
+  - **Cloud Track** - Select Guest Customization
 
-.. code-block:: bash
+    - Leave **Cloud-init** selected and paste in the following script
+
+      .. code-block:: bash
+
+        #cloud-config
+        users:
+          - name: centos
+            ssh-authorized-keys:
+              - @@{INSTANCE_PUBLIC_KEY}@@
+            sudo: ['ALL=(ALL) NOPASSWD:ALL']
+
+      .. code-block:: bash
+
+  - **Local Track** - Leave Guest Customization Unselected
+
 - Select :fa:`plus-circle` under **Network Adapters (NICs)**
 - **NIC** - Primary
 - **Credential** - CENTOS
