@@ -160,6 +160,8 @@ Copy and paste the following script into the **Script** field:
   sudo yum update -y
   sudo setenforce 0
   sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config
+  sudo systemctl stop firewalld || true
+  sudo systemctl disable firewalld || true
   sudo yum install -y mysql-community-server.x86_64
 
   sudo /bin/systemctl start mysqld
