@@ -130,8 +130,10 @@ Fill out the following fields:
 - **OS** - Linux
 - **VM Name** - MYSQL-@@{calm_array_index}@@-@@{calm_time}@@
 - **Image**
+
   - **Cloud Track** - CentOS\_7\_Cloud
   - **Local Track** - CentOS
+
 - **Device Type** - Disk
 - **Device Bus** - SCSI
 - Select **Bootable**
@@ -143,6 +145,7 @@ Fill out the following fields:
   - **Cloud Track** - Select Guest Customization
 
     - Leave **Cloud-init** selected and paste in the following script
+
       .. code-block:: bash
       
         #cloud-config
