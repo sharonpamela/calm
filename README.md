@@ -5,3 +5,5 @@ sphinx-bootstrap-theme == 0.6.0
 sphinx_fontawesome
 
 Uncomment example\\index in .\\index.rst to view example workshop
+
+Michael: testing
