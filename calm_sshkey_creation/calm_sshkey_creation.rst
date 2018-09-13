@@ -47,7 +47,7 @@ Open up your terminal of choice, and type in *ssh-keygen -t rsa -f ~/[KEY_FILENA
 Accessing the Private Key
 .........................
 
-When working through Calm blueprints and application launches, you'll need the username you provided in the first step (*centos* in my example, as the majority of the pre-seeded marketplace apps use centos as the usernam), and the contents of the private key (including the **-----BEGIN RSA PRIVATE KEY-----** and **-----END RSA PRIVATE KEY-----** lines, **without** any additional new lines at the end).
+When working through Calm blueprints and application launches, you'll need the username you provided in the first step (*centos* in my example, as the majority of the pre-seeded marketplace apps use centos as the username), and the contents of the private key (including the **-----BEGIN RSA PRIVATE KEY-----** and **-----END RSA PRIVATE KEY-----** lines, **without** any additional new lines at the end).
 
 .. code-block:: bash
 
@@ -105,10 +105,15 @@ If Putty Keygen is not already present on your machine, first download and insta
 - Open up Putty Key Generator
 - Create a key by clicking **Generate** and then moving your mouse in the blank section
 - Convert the private key to OpenSSH format by selecting **Conversion > Export OpenSSH key**
+
   .. figure:: images/putty1.png
+
 - On the pop-up, selct **Yes** as a passphrase is not required, and not supported for Prism Central versions less than 5.8.1
+
   .. figure:: images/putty2.png
+
 - Save the key with a name of your choice (I'm using **calmPem.pem** in my example)
+
   .. figure:: images/putty3.png
 
 Accessing the Private Key
