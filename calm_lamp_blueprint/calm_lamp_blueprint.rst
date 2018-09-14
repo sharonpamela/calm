@@ -261,3 +261,8 @@ Takeaways
 - Applications typically span across multiple VMs, each responsible for different services. Calm is capable of automated and orchestrating full applications.
 - Dependencies between services can be easily modeled in the Blueprint Editor.
 - Users can quickly provision entire application stacks for production or testing for repeatable results without time lost to manual configuration.
+
+.. |proj-icon| image:: ../images/projects_icon.png
+.. |mktmgr-icon| image:: ../images/marketplacemanager_icon.png
+.. |mkt-icon| image:: ../images/marketplace_icon.png
+.. |bp-icon| image:: ../images/blueprints_icon.png

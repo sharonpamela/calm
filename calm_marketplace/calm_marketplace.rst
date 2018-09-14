@@ -246,3 +246,8 @@ Takeaways
 - Developers can publish Blueprints to the Marketplace for fast and easy consumption by users.
 - Blueprints can be launched directly from the Marketplace with no additional configuration from users, delivering a public cloud-like SaaS experience for end users.
 - Administrators have control over what Blueprints are published to the Marketplace and which projects have access to published Blueprints.
+
+.. |proj-icon| image:: ../images/projects_icon.png
+.. |mktmgr-icon| image:: ../images/marketplacemanager_icon.png
+.. |mkt-icon| image:: ../images/marketplace_icon.png
+.. |bp-icon| image:: ../images/blueprints_icon.png

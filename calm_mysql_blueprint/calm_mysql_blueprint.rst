@@ -263,3 +263,8 @@ Takeaways
 - Variables allow another dimension of customizing an application without having to edit the underlying Blueprint.
 - There are multiple ways of authenticating to a VM (keys or passwords), which is dependent upon the source image.
 - Application status can be monitored in real time.
+
+.. |proj-icon| image:: ../images/projects_icon.png
+.. |mktmgr-icon| image:: ../images/marketplacemanager_icon.png
+.. |mkt-icon| image:: ../images/marketplace_icon.png
+.. |bp-icon| image:: ../images/blueprints_icon.png
