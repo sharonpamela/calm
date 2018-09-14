@@ -71,14 +71,16 @@ Creating A Project
 
 Projects are the logical construct that integrate Calm with Nutanix's native Self-Service Portal (SSP) capabilities, allowing an administrator to assign both infrastructure resources and the roles/permissions of Active Directory users/groups to specific Blueprints and Applications.
 
+Click + Create Project
+
 Select |proj-icon| **Projects** from the sidebar.
 
 .. figure:: images/581enable8.png
 
 Fill out the following fields:
 
-- **Project Name** - Calm-*intials*
-- **Description** - Calm-*intials*
+- **Project Name** - Calm-*initials*
+- **Description** - Calm-*initials*
 
 Under **Users, Groups, and Roles**, click **+ User**.
 

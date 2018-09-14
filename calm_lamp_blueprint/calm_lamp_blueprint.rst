@@ -82,8 +82,6 @@ Copy and paste the following script into the **Script** field:
   sudo systemctl restart httpd
   sudo systemctl enable httpd
 
-.. code-block:: bash
-
 Select the Apache service icon in the workspace window again and scroll to the top of the **Configuration Panel**, click **Package**.
 
 Fill out the following fields:
@@ -101,8 +99,6 @@ Copy and paste the following script into the **Script** field:
 
   #!/bin/bash
   echo "Goodbye!"
-
-.. code-block:: bash
 
 Click **Save**.
 
@@ -231,8 +227,6 @@ Copy and paste the following script into the **Script** field:
   sudo systemctl enable haproxy
   sudo systemctl restart haproxy
 
-.. code-block:: bash
-
 Select the HAProxy service icon in the workspace window again and scroll to the top of the **Configuration Panel**, click **Package**.
 
 Fill out the following fields:
@@ -250,8 +244,6 @@ Copy and paste the following script into the **Script** field:
 
   #!/bin/bash
   echo "Goodbye!"
-
-.. code-block:: bash
 
 Click **Save**.
 

@@ -94,7 +94,7 @@ Copy and paste the following script into the **Script** field:
   sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
   sudo yum update -y
   sudo yum install -y nginx php56w-fpm php56w-cli php56w-mcrypt php56w-mysql php56w-mbstring php56w-dom git unzip
-  
+
   sudo mkdir -p /var/www/laravel
   echo "server {
    listen 80 default_server;
@@ -120,22 +120,22 @@ Copy and paste the following script into the **Script** field:
   else
    sudo sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/' /etc/php.ini
   fi
-  
+
   sudo systemctl enable php-fpm
   sudo systemctl enable nginx
   sudo systemctl restart php-fpm
   sudo systemctl restart nginx
-  
+
   if [ ! -e /usr/local/bin/composer ]
   then
    curl -sS https://getcomposer.org/installer | php
    sudo mv composer.phar /usr/local/bin/composer
    sudo chmod +x /usr/local/bin/composer
   fi
-  
+
   sudo git clone https://github.com/ideadevice/quickstart-basic.git /var/www/laravel
   sudo sed -i 's/DB_HOST=.*/DB_HOST=@@{MySQL.address}@@/' /var/www/laravel/.env
-  
+
   sudo su - -c "cd /var/www/laravel; composer install"
   if [ "@@{calm_array_index}@@" == "0" ]; then
    sudo su - -c "cd /var/www/laravel; php artisan migrate"
@@ -164,7 +164,7 @@ Copy and paste the following script into the **Script** field:
 
   #!/bin/bash
   set -ex
-  
+
   sudo rm -rf /var/www/laravel
   sudo yum erase -y nginx
 
@@ -274,7 +274,7 @@ Copy and paste the following script into the **Script** field:
   sudo yum update -y
   sudo yum install -y haproxy
   sudo setenforce 0
-  sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config 
+  sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config
   sudo systemctl stop firewalld || true
   sudo systemctl disable firewalld || true
 
@@ -306,10 +306,10 @@ Copy and paste the following script into the **Script** field:
    bind 0.0.0.0:80
    default_backend servers-http
   backend servers-http" | sudo tee /etc/haproxy/haproxy.cfg
-  
+
   hosts=$(echo "@@{WebServer.address}@@" | tr "," "\n")
   port=80
-  
+
   for host in $hosts
     do echo " server host-${host} ${host}:${port} weight 1 maxconn 100 check" | sudo tee -a /etc/haproxy/haproxy.cfg
   done
@@ -338,7 +338,7 @@ Copy and paste the following script into the **Script** field:
   #!/bin/bash
   set -ex
 
-  sudo 
+  sudo
   yum -y erase haproxy
 
 .. code-block:: bash
@@ -386,11 +386,11 @@ Copy and paste the following script into the **Script** field:
 
   #!/bin/bash
   set -ex
-  
+
   host=$(echo "@@{WebServer.address}@@" | awk -F "," '{print $NF}')
   port=80
   echo " server host-${host} ${host}:${port} weight 1 maxconn 100 check" | sudo tee -a /etc/haproxy/haproxy.cfg
-  
+
   sudo systemctl daemon-reload
   sudo systemctl restart haproxy
 
@@ -435,10 +435,10 @@ Copy and paste the following script into the **Script** field:
 
   #!/bin/bash
   set -ex
-  
+
   host=$(echo "@@{WebServer.address}@@" | awk -F "," '{print $NF}')
   sudo sed -i '/$host/d' /etc/haproxy/haproxy.cfg
-  
+
   sudo systemctl daemon-reload
   sudo systemctl restart haproxy
 
