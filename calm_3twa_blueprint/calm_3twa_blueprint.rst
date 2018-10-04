@@ -470,3 +470,8 @@ Takeaways
 - Dependencies between services can be easily modeled in the Blueprint Editor.
 - Users can quickly provision entire application stacks for production or testing for repeatable results without time lost to manual configuration.
 - Day 2 operations such as scaling can also be easily modeled, allowing administrators to manage an application for months or years.
+
+.. |proj-icon| image:: ../images/projects_icon.png
+.. |mktmgr-icon| image:: ../images/marketplacemanager_icon.png
+.. |mkt-icon| image:: ../images/marketplace_icon.png
+.. |bp-icon| image:: ../images/blueprints_icon.png
